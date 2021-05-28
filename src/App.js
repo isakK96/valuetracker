@@ -1,23 +1,22 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from "react";
+import Chart from "./Chart";
+import Search from "./Search";
 
 function App() {
+  const [query, setQuery] = useState("IBM");
+  const [searchInput, setSearchInput] = useState("");
+  function handleSearch(e) {
+    e.preventDefault();
+    setQuery(searchInput);
+  }
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <Search
+        handleSearch={handleSearch}
+        searchInput={searchInput}
+        setSearchInput={setSearchInput}
+      />
+      <Chart query={query} />
     </div>
   );
 }
