@@ -5,11 +5,15 @@ const instance = axios.create({
 });
 
 export const getDailyValue = (symbol) => {
-  return instance.get("", {
-    params: {
-      function: "TIME_SERIES_DAILY",
-      symbol,
-      apikey: "LXG3KFSHHFEET085",
-    },
-  });
+  try {
+    return instance.get("", {
+      params: {
+        function: "TIME_SERIES_DAILY",
+        symbol,
+        apikey: "LXG3KFSHHFEET085",
+      },
+    });
+  } catch (error) {
+    return error;
+  }
 };
