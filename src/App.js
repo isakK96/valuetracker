@@ -17,6 +17,8 @@ function App() {
   function handleStarClick() {
     if (query && !starredList.includes(query)) {
       setStarredList([query, ...starredList]);
+    } else if (query && starredList.includes(query)) {
+      setStarredList(starredList.filter((item) => item !== query));
     }
   }
 

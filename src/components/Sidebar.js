@@ -6,7 +6,7 @@ export default function Sidebar(props) {
         <ul>
           {props.starredList.map((item, key) => (
             <li key={key}>
-              <a href="#" onClick={props.handleStarClick}>
+              <a href="#" onClick={props.handleHistoryClick}>
                 {item}
               </a>
             </li>
