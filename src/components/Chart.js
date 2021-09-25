@@ -1,8 +1,11 @@
 import React, { useEffect, useState } from "react";
 import { getDailyValue } from "../Api";
 import { CanvasJSChart } from "canvasjs-react-charts";
+import StarIcon from "@mui/icons-material/Star";
+import StarBorderIcon from "@mui/icons-material/StarBorder";
+import IconButton from "@mui/material/IconButton";
 
-export default function Chart({ query, handleStarClick }) {
+export default function Chart({ query, handleStarClick, starredList }) {
   const [stockData, setStockData] = useState([]);
 
   useEffect(() => {
@@ -19,10 +22,16 @@ export default function Chart({ query, handleStarClick }) {
     return null;
   }
   return (
-    <>
+    <div className="chart-container">
       <div className="title-container">
         <h2>{query}</h2>
-        <button onClick={handleStarClick}>STAR</button>
+        <IconButton onClick={handleStarClick}>
+          {starredList.includes(query) ? (
+            <StarIcon sx={{ color: "gold" }} />
+          ) : (
+            <StarBorderIcon />
+          )}
+        </IconButton>
       </div>
       <CanvasJSChart
         options={{
@@ -42,7 +51,7 @@ export default function Chart({ query, handleStarClick }) {
           ],
         }}
       />
-    </>
+    </div>
   );
 
   function formatStockData(stockData) {
