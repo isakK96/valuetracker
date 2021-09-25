@@ -1,0 +1,35 @@
+.top {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.title {
+  margin: 0;
+}
+.main {
+  display: flex;
+  flex-direction: row;
+}
+.search-wrapper {
+  display: flex;
+  flex-direction: column;
+}
+.search-form {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+}
+.suggestion-list {
+  margin-top: 3.5rem;
+  z-index: 10;
+  background-color: #eeeeee;
+}
+.sidebar-container {
+  width: 15%;
+}
+.chart-container {
+  width: 85%;
+}
+.title-container {
+  display: flex;
+}
