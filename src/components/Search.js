@@ -61,6 +61,7 @@ export default function Search({
             name="searchInput"
             className=""
             autoComplete="off"
+            sx={{ backgroundColor: "white" }}
             value={searchInput}
             onChange={(e) => {
               setSearchInput(e.target.value);

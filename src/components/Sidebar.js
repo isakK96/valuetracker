@@ -1,6 +1,6 @@
 export default function Sidebar(props) {
   return (
-    <div className="container">
+    <div className="sidebar-container">
       <div className="starred">
         <h2>Starred</h2>
         <ul>
