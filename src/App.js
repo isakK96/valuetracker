@@ -2,9 +2,10 @@ import React, { useState, useEffect } from "react";
 import Chart from "./components/Chart";
 import Search from "./components/Search";
 import Sidebar from "./components/Sidebar";
+import AppBar from "@mui/material/AppBar";
 
 function App() {
-  const [query, setQuery] = useState("");
+  const [query, setQuery] = useState("AMZN");
   const [searchInput, setSearchInput] = useState("");
   const [searchHistory, setSearchHistory] = useState([]);
   const [starredList, setStarredList] = useState([]);
@@ -42,24 +43,37 @@ function App() {
   function handleHistoryClick(e) {
     setQuery(e.target.text);
   }
+  function handleSuggestionClick(item) {
+    setSearchInput("");
+    setQuery(item["1. symbol"]);
+  }
   return (
     <div>
-      <div className="top">
-        <Search
-          handleSearch={handleSearch}
-          searchInput={searchInput}
-          setSearchInput={setSearchInput}
+      <AppBar position="static">
+        <div className="top">
+          <h1 className="title">ValueTracker</h1>
+          <Search
+            handleSearch={handleSearch}
+            searchInput={searchInput}
+            setSearchInput={setSearchInput}
+            handleSuggestionClick={handleSuggestionClick}
+          />
+        </div>
+      </AppBar>
+      <div className="main">
+        <Chart
+          query={query}
+          handleStarClick={handleStarClick}
+          starredList={starredList}
         />
-      </div>
-      <div>
         <Sidebar
           searchHistory={searchHistory}
           starredList={starredList}
           handleStarClick={handleStarClick}
           handleHistoryClick={handleHistoryClick}
         />
-        <Chart query={query} handleStarClick={handleStarClick} />
       </div>
+      <div className="footer"></div>
     </div>
   );
 }
