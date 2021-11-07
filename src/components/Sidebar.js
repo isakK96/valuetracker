@@ -1,6 +1,8 @@
+import Paper from "@mui/material/Paper";
+
 export default function Sidebar(props) {
   return (
-    <div className="sidebar-container">
+    <Paper className="sidebar-container">
       <div className="starred">
         <h2>Starred</h2>
         <ul>
@@ -25,6 +27,6 @@ export default function Sidebar(props) {
           ))}
         </ul>
       </div>
-    </div>
+    </Paper>
   );
 }

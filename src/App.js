@@ -3,6 +3,7 @@ import Chart from "./components/Chart";
 import Search from "./components/Search";
 import Sidebar from "./components/Sidebar";
 import AppBar from "@mui/material/AppBar";
+import Paper from "@mui/material/Paper";
 
 function App() {
   const [query, setQuery] = useState("AMZN");
@@ -48,7 +49,7 @@ function App() {
     setQuery(item["1. symbol"]);
   }
   return (
-    <div>
+    <div className="app">
       <AppBar position="static">
         <div className="top">
           <h1 className="title">ValueTracker</h1>
@@ -73,7 +74,7 @@ function App() {
           handleHistoryClick={handleHistoryClick}
         />
       </div>
-      <div className="footer"></div>
+      <Paper className="footer">footer</Paper>
     </div>
   );
 }
