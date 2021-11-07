@@ -6,8 +6,9 @@ import {
   List,
   ListItem,
   ListItemText,
+  Paper,
 } from "@mui/material/";
-import debounce from "lodash.debounce";
+import { DebounceInput } from "react-debounce-input";
 
 export default function Search({
   searchInput,
@@ -20,6 +21,7 @@ export default function Search({
   async function handleInput(e) {
     if (e.target.value.length > 1) {
       const result = await getSearchSuggestion(e.target.value);
+      console.log("test");
       formatSearchResults(result.data["bestMatches"]);
     } else {
       setSearchSuggestions([]);
@@ -40,7 +42,6 @@ export default function Search({
         >
           <ListItemText
             sx={{ color: "primary.main" }}
-            //classes={{ primary: "primary-text" }}
             primary={d["1. symbol"]}
             secondary={d["2. name"]}
           />
@@ -53,8 +54,11 @@ export default function Search({
     <div className="form-container">
       <form onSubmit={handleSearch} className="search-form">
         <div className="search-wrapper">
-          <TextField
+          <DebounceInput
+            element={TextField}
             TextField
+            minLength={2}
+            debounceTimeout={400}
             id="outlined-basic"
             variant="outlined"
             type="text"
@@ -68,12 +72,13 @@ export default function Search({
               handleInput(e);
             }}
           />
-          <List
+          <Paper
+            component={List}
             sx={{ position: "absolute", marginTop: "3.5rem" }}
             className="suggestion-list"
           >
             {searchSuggestions}
-          </List>
+          </Paper>
         </div>
         <Button variant="contained" type="submit" className="">
           Search
