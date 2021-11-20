@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import Chart from "./components/Chart";
 import Search from "./components/Search";
 import Sidebar from "./components/Sidebar";
+import Footer from "./components/Footer";
 import AppBar from "@mui/material/AppBar";
 import Paper from "@mui/material/Paper";
 
@@ -50,7 +51,7 @@ function App() {
   }
   return (
     <div className="app">
-      <AppBar position="static">
+      <AppBar sx={{ backgroundColor: "#00478d" }} position="static">
         <div className="top">
           <h1 className="title">ValueTracker</h1>
           <Search
@@ -74,7 +75,9 @@ function App() {
           handleHistoryClick={handleHistoryClick}
         />
       </div>
-      <Paper className="footer">footer</Paper>
+      <Paper>
+        <Footer />
+      </Paper>
     </div>
   );
 }
