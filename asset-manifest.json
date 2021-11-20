@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "/valuetracker/static/css/main.0a129820.chunk.css",
+    "main.js": "/valuetracker/static/js/main.6b2e2efa.chunk.js",
+    "main.js.map": "/valuetracker/static/js/main.6b2e2efa.chunk.js.map",
+    "runtime-main.js": "/valuetracker/static/js/runtime-main.72a15e1d.js",
+    "runtime-main.js.map": "/valuetracker/static/js/runtime-main.72a15e1d.js.map",
+    "static/js/2.feb173ab.chunk.js": "/valuetracker/static/js/2.feb173ab.chunk.js",
+    "static/js/2.feb173ab.chunk.js.map": "/valuetracker/static/js/2.feb173ab.chunk.js.map",
+    "static/js/3.7a6cf687.chunk.js": "/valuetracker/static/js/3.7a6cf687.chunk.js",
+    "static/js/3.7a6cf687.chunk.js.map": "/valuetracker/static/js/3.7a6cf687.chunk.js.map",
+    "index.html": "/valuetracker/index.html",
+    "static/css/main.0a129820.chunk.css.map": "/valuetracker/static/css/main.0a129820.chunk.css.map",
+    "static/js/2.feb173ab.chunk.js.LICENSE.txt": "/valuetracker/static/js/2.feb173ab.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.72a15e1d.js",
+    "static/js/2.feb173ab.chunk.js",
+    "static/css/main.0a129820.chunk.css",
+    "static/js/main.6b2e2efa.chunk.js"
+  ]
+}
