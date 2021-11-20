@@ -25,7 +25,7 @@ export default function Chart({ query, handleStarClick, starredList }) {
     <div className="chart-container">
       <div className="title-container">
         <h2>{query}</h2>
-        <IconButton onClick={handleStarClick}>
+        <IconButton sx={{ maxHeight: "3rem" }} onClick={handleStarClick}>
           {starredList.includes(query) ? (
             <StarIcon sx={{ color: "gold" }} />
           ) : (
@@ -55,16 +55,20 @@ export default function Chart({ query, handleStarClick, starredList }) {
   );
 
   function formatStockData(stockData) {
-    return Object.entries(stockData).map((entries) => {
-      const [date, priceData] = entries;
+    try {
+      return Object.entries(stockData).map((entries) => {
+        const [date, priceData] = entries;
 
-      return {
-        date,
-        open: Number(priceData["1. open"]),
-        high: Number(priceData["2. high"]),
-        low: Number(priceData["3. low"]),
-        close: Number(priceData["4. close"]),
-      };
-    });
+        return {
+          date,
+          open: Number(priceData["1. open"]),
+          high: Number(priceData["2. high"]),
+          low: Number(priceData["3. low"]),
+          close: Number(priceData["4. close"]),
+        };
+      });
+    } catch (error) {
+      console.log(error);
+    }
   }
 }

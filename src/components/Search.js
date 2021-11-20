@@ -1,4 +1,4 @@
-import React, { useState, useMemo } from "react";
+import React, { useState } from "react";
 import { getSearchSuggestion } from "../Api";
 import {
   Button,
@@ -21,8 +21,12 @@ export default function Search({
   async function handleInput(e) {
     if (e.target.value.length > 1) {
       const result = await getSearchSuggestion(e.target.value);
-      console.log("test");
-      formatSearchResults(result.data["bestMatches"]);
+      console.log(result);
+      try {
+        formatSearchResults(result.data["bestMatches"]);
+      } catch (error) {
+        console.log(error);
+      }
     } else {
       setSearchSuggestions([]);
     }
