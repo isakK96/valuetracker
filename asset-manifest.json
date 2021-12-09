@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/valuetracker/static/css/main.0a129820.chunk.css",
-    "main.js": "/valuetracker/static/js/main.6b2e2efa.chunk.js",
-    "main.js.map": "/valuetracker/static/js/main.6b2e2efa.chunk.js.map",
+    "main.js": "/valuetracker/static/js/main.6dc252ac.chunk.js",
+    "main.js.map": "/valuetracker/static/js/main.6dc252ac.chunk.js.map",
     "runtime-main.js": "/valuetracker/static/js/runtime-main.72a15e1d.js",
     "runtime-main.js.map": "/valuetracker/static/js/runtime-main.72a15e1d.js.map",
     "static/js/2.feb173ab.chunk.js": "/valuetracker/static/js/2.feb173ab.chunk.js",
@@ -17,6 +17,6 @@
     "static/js/runtime-main.72a15e1d.js",
     "static/js/2.feb173ab.chunk.js",
     "static/css/main.0a129820.chunk.css",
-    "static/js/main.6b2e2efa.chunk.js"
+    "static/js/main.6dc252ac.chunk.js"
   ]
 }
